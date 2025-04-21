@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('konten')
-<h1>Blog</h1>
+<h1>Category Post : {{ $category }}</h1>
 
-@foreach ($blogpost as $post)
+@foreach ($blogposts as $post)
 <article class="mb-5">
 
 <h2><a href="/post/{{ $post->slug }}">{{ $post->title }}</a></h2>
