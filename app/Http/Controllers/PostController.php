@@ -15,10 +15,10 @@ class PostController extends Controller
         ]);
     }
 
-    public function each($slug){
+    public function each(Post $post){
         return view('post',[
             'title' => "Lihat postingan",
-            'post' => Post::each($slug)
+            'post' => $post
         ]);
     }
 }

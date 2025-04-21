@@ -32,4 +32,4 @@ Route::get('/home', function () {
 });
 
 Route::get('/blog', [PostController::class, 'index']);
-Route::get('post/{slug}', [PostController::class,'each']);
+Route::get('post/{post}', [PostController::class,'each']);
