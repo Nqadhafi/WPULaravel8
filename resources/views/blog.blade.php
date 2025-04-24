@@ -20,6 +20,9 @@
     @foreach ($blogposts->skip(1) as $post)
     <div class="col-md-4 mb-2">
         <div class="card" >
+          <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7); color: white; font-size: 12px; border-radius: 5px;">
+           <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none text-white">{{ $post->category->name }}</a> 
+          </div>
             <img src="https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&fm=jpg&w=400&fit=max" class="card-img-top" alt="...">
             <div class="card-body">
                 

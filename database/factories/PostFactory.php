@@ -17,7 +17,7 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence,
             'slug' => $this->faker->slug,
             'exerpt' => $this->faker->paragraph,
-            'body' => $this->faker->paragraphs(3, true),
+            'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(5)) . '</p>',
             'author' => $this->faker->name,
             'category_id' => $this->faker->numberBetween(1, 3),
         ];

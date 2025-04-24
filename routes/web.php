@@ -20,13 +20,15 @@ Route::get('/', function () {
 });
 Route::get('/about', function () {
     return view('about',[
-        'title' => "about"
+        'title' => "about",
+        'active' => 'about',
     ]);
 });
 
 Route::get('/home', function () {
     return view('home',[
         'title' => "home",
+        'active' => 'home',
         'nama' => "nanda",
         'email' => "wkwkw@gmail.com",
     ]);
@@ -37,6 +39,7 @@ Route::get('post/{post:slug}', [PostController::class,'each']);
 Route::get('categories', function(){
     return view('categories',[
         'title' => 'Post Categoriess',
+        'active' => 'categories',
         'categories' => Category::all()
     ]);
 });
@@ -44,6 +47,7 @@ Route::get('categories/{category:slug}',function(Category $category){
     return view('blog',[
         'title' => "Categories by ". $category->name,
         'blogposts' => $category->posts->load('category'),
+        'active' => 'categories',
 
     ]);
 });
