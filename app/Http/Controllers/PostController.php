@@ -12,7 +12,7 @@ class PostController extends Controller
         return view('blog',[
             'title' => "All Posts",
             'active' => 'blog',
-            'blogposts' => Post::latest()->anjay(request(['search']))->get(),
+            'blogposts' => Post::latest()->anjay(request(['search','category']))->paginate(6)->withQueryString(),
         ]);
     }
 
