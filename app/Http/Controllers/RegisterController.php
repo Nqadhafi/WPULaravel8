@@ -12,4 +12,16 @@ class RegisterController extends Controller
             'active' => 'register'
         ]);
     }
+
+    public function store(Request $anjay){
+            $anjay->validate([
+                'name' => 'required|max:255',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:8'
+
+
+            ]);
+
+            dd('sukses');
+    }
 }
